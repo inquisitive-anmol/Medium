@@ -103,10 +103,4 @@ const deleteBlog = async(req, res) => {
 
 
 
-
-
-
-console.log("in c2")
-
-
 module.exports = {showAllBlogs, newBlogForm, newBlog, showBlog, editBlogForm, editBlog, deleteBlog};

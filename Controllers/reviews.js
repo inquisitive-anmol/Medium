@@ -18,7 +18,6 @@ const addReview = async(req, res) => {
     }
 };
 
-console.log("in c3")
 
 
 module.exports = addReview;

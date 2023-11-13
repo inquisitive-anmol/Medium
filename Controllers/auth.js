@@ -75,6 +75,6 @@ const bookmark = async(req, res, next) => {
     }
 };
 
-console.log("in c1")
+
 
 module.exports = {registerForm, register, loginForm, login, logout, profile,bookmark};
