@@ -1,0 +1,133 @@
+<%-include('../Partials/header')%>
+<%-include('../Partials/navbar')%>
+
+
+    <div class="home">
+        <section class="home-txt">
+            <h1>Stay curious.</h1>
+            <p>Discover stories, thinking, and expertise <br> from writers on any topic.</p>
+            <button type="button">Start Reading</button>
+        </section>
+        
+        
+    </div>
+
+    <div id="trend-spl">
+        <span id="trend-icon" class="material-symbols-outlined">
+            trending_up
+            </span>
+            <p>Trending on Medium</p>
+    </div>
+    
+
+    <div class="trending">
+        
+        <%for(let item of trends){%>
+            <div class="trend-card">
+                <h1><%=item.index%></h1>
+                <section>
+                    <p><%=item.name%></p>
+                    <h4><%=item.text%></h4>
+                    <p class="p2"><%=item.details%></p>
+                </section>
+            </div>
+        <%}%>
+     
+    </div>
+
+  <hr style="margin-top: 160px; background-color: lightgray; height: 1px; border: none;" >
+
+    <div class="wall">
+        <div class="posts">
+
+            <%for(let item of blogs){%>
+                <div class="post">
+                    <div class="names">
+                        <img class="names-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAkFBMVEX///8zLzBUUlMwKizk4+QxLS4uKisxLzA0LjAPCw0oJSYYFRYsKCltbGwuLC3n5ucfGhtfXV4AAADu7e47OTo2NDWamZmzsbIjHyD39vfLy8urq6t8fHwkISMaGBkVEhORj5C/vr/X1teenJ1KSEmHhYZPTk6CgYK7uroLAQbR0NFzcXJmZWZAP0ClpKSwrq/BpziMAAAE7klEQVR4nO3c63KqPBgFYLACEg5CoQpWDloPbW3d9393H7b1m+5u1CRKXtJZz4z/3zVATiYxDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApyexxMg+CYF4/zhLqYm7vdZ26FWO+79uMFZ6brmfUJd1SUj94zDK/s5j3UP+WJ5lsy8xsYRXe9ldkfKpYW74PrJxQl3e1Ydr6/I6cLB1Sl3idaRU65xKapl39oS7yGnV1Id/hMVY1dZnytt7lgI1oTl2orLXncCU0yy11qXL2HK/o14vqadmkzlzegE1Ed0Fdrrgk5HxFP1iFfn3/jgkEbPr+N+qCRc0qkXyN6pm6ZEGpdTnUX6wH6pLFPIs+wqbLeKQuWsgmFE4YvlMXLWL5IhzQNF2d5sRzXyKhHVCXzS9/EG1nDiw/py6c21K8nTnw9BnYPJ2d9Z5U1NSFcwtsqYRhTF04N+Hu/oujy4eYM8mE0Zi6dE5juYamSbikLp3T0pNNqEufL59Ql+4CCU8ZaZNwLJ3wlbp0TrK9hRNps8IvNfBuhLr0+Mab3KjN2lAXzm0iN/Jm+ix9v8oNasopdeHcckfqQyx0GZYakqsYGk2emtfUlUjo6fOSNt7FW1PL1Oqvi6n4sCarqYsWI97WMK0eoWEsRB9i9ERdsqhYrDm1V9qM2I6STOj/Q22m998sRHoMT7t39KDm/hSdbK7dO/phzjsAL2I9AxrGji8iG2jWUXwz59lxEsX6BjSM/eWI7lrXV/TTq3P+TWW+VuPtNvm6sluf46j5+WWgzeLTGcvYbd8lbFcDXRZIL1nuqvLux052O/LeNBzHnJRPg9D1mN2wbJ9Flf+212jNgk++nK538WaziYP1rzxSAgAAAAA9lyfjYZtxovfs3vg4vb2N06isKrdN5XlZGm91HYaPp/M0ijLfPv8XTTOXyqIs3U01m0sNJ6uqvJDtG8fxo2pVa7Ogke9X94z/vMVxEcdmL6u9Dh/mcn5fyG2nORzSv5/3fYvpMvZOn03n4VdxnzMOA1fo1OGJjG99/SDzdSWzyeRfdtXPZfAFY5fO3nNjWf9OI+aBa139gn5TBT17jLPwugbmh1HzGMNerRdP+K4WEGK5PTrCvivN2yc0Ta8vx/XyVdFBvIZTrHoxJk/eb9NHtEX00x4MyMcPsmM0HqFP3vsnzDY7+QiPETPip5in/mHy0026UdNpOGFI+i3mq86+wf/R7niLb9rPn8AId0fXpYKAphmtqQIuZO4VkOESjcMTV/Lwj5hDc3NP06AO7M9NMV0nHDUNKsl5ob3sOUoZEcEofKimlTkq1Y9tDvu4OxzL/BQOVAdcCNzkdQuO8luW0putyfBGdNQGnJaKAzaNzV5pQtmbL66h9NaMZ5U9xVGk8qqslfhFV9ezFF6V9aq4If2i8HLFnU+S0FY2jUqirmb1Fyi7v+aP3GH062WqTkcNulxdO0dVW5PIHGO+DVfN+Ps5IkuYqRnX7FQsP7Wz1dzjahGM2I4yFSO38T1dQPNFxTYGws/QNAsVH2Ld/TL3ab6K69tjqt7wwFopSPhO2NAomSTmatfYfvK67/OHqpby27ndX3gmeUPSrXjdL7ktaBMqWI8imzp9Krpf3n8qFPwbcxrr/r/ESXZn35Gxi+67/P1mQGlTd54QAAAAAAAAAAAAAAAAAAAAAAAAAAAAeu0/x+JYm3USOVoAAAAASUVORK5CYII=" alt="">
+                        &nbsp;&nbsp;<h5 style="display: inline;"><%=item.name%></h5>&nbsp;
+                        <%if(item.org != ''){%>
+                            <h5>in <%=item.org%></h5>
+                        <%}%>
+                    </div>
+                    <div class="post-txt">
+                        <h2><a href="/blogs/<%=item._id%>" class="blogs-anchor"><%=item.headline%></a></h2>
+                        <p><%=item.text%></p>    
+                        <div class="post-footer">
+                            <p><%=item.date%></p>&nbsp;
+                                <span class="mini-btn">Leadership </span>&nbsp;
+                                <!-- <span   class="material-symbols-outlined saved">
+                                    bookmark_add
+                                    </span> -->
+                                    <%if(currentUser){%>
+
+                                        <i class="fa-solid fa-thumbs-up" style="color: #000000;" blogID="<%=item._id%>"></i>
+                                        <span style="height: 20px;  max-width: fit-content;gap: 5px; display: flex; justify-content: space-evenly; align-items: center;">
+                                            <p>&nbsp;<%=item.likes.length%></p>
+                                        </span> 
+                                        <%if(currentUser.saved.includes(item._id)){%>
+                                        <i  blogID="<%=item._id%>" class="fa-solid fa-bookmark saved" style="color: #000000; margin-left: 100px;"></i>
+                                        <%} else {%>
+                                        <i  blogID="<%=item._id%>" class="fa-regular fa-bookmark saved" style="color: #000000; margin-left: 100px;"></i>
+                                        <%}%>
+                                    <%} else {%>
+                                        <span style="height: 20px; max-width: fit-content;gap: 5px;display: flex; justify-content: space-evenly; align-items: center;">
+                                            <i class="fa-solid fa-heart" style="color: #000000;"></i>
+                                            <p><%=item.likes.length%></p>
+                                        </span> 
+                                        <%}%>
+                                    
+                        </div>
+                    </div>
+                </div>
+                <div class="post-img">
+                    <a href="/blogs/<%=item._id%>" class="blogs-anchor"><img class="imageee" src="<%=item.img%>" alt="">
+                    </a>
+                </div>
+            <%}%>
+        </div>
+
+        <aside class="more">
+            <p>Discover more of what matters to you</p>
+    
+            <div class="more-grid">
+               <div class="morebtns">Programming</div>
+               <div class="morebtns">Data Science</div>
+               <div class="morebtns">Technology</div>
+               <div class="morebtns">Self Improvement</div>
+               <div class="morebtns">Writing</div>
+               <div class="morebtns">Relationships</div>
+               <div class="morebtns">Machine Learning</div>
+               <div class="morebtns">Productivity</div>
+               <div class="morebtns">Politics</div>
+            </div>
+            
+        
+            <a href="" class="more-topics">See more topics</a>
+            <br><br>
+
+            <hr class="spcl-hr">
+
+            <div class="footer">
+                <div class="sub-footer">
+                    <a href="" class="footer-links">Help</a>
+                    <a href="" class="footer-links">Status</a>
+                    <a href="" class="footer-links">Writers</a>
+                    <a href="" class="footer-links">Blog</a>
+                    <a href="" class="footer-links">Careers</a>
+                </div>
+                <div class="sub-footer">
+                    <a href="" class="footer-links">Privacy</a>
+                    <a href="" class="footer-links">Terms</a>
+                    <a href="" class="footer-links">About</a>
+                    <a href="" class="footer-links">Text to speech</a>           
+                </div>
+            </div>
+        </aside>
+
+            
+        
+
+    </div>
+
+    <script src="../js/index.js"></script>
+<%-include('../Partials/footer')%>

@@ -1,0 +1,15 @@
+<header>
+    <a href="/blogs"><img class="header-logo" src="https://cdn3.iconfinder.com/data/icons/social-media-black-white-2/300/Medium-Logo-Black-RGB_300x80-1024.png" alt=""></a>
+
+    <nav class="navbar">
+        <a href="/blogs/new">Write</a>
+        <%if(!currentUser){%>
+            <a href="/login">Sign In</a>            
+            <a href="/register">Sign up</a>
+        <%} else {%>                
+            <a href="/logout">Sign Out</a>
+            <a href="/user/<%=currentUser._id%>/profile"><span style="color: black;" userID="<%currentUser._id%>"><i class="fa-solid fa-circle fa-2xs" style="color: #15c137;"></i>&nbsp;<%=currentUser.username%></span></a>
+        <%}%>
+        
+    </nav>
+</header>

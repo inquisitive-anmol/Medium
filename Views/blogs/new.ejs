@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <%-include('../partials/navbar')%>
+
+    <br><br><br><br><br>
+    <form action="/blogs" class="needs-validation" method="post" id="newForm" novalidate>
+        <div class="ipDiv">
+            <label for="username">Your Name</label>
+            <p></p>
+            <input type="text" name="name" value="<%=currentUser.username%>" disabled  style="width: 75%;">
+            <!-- <textarea name="name" id="username" cols="60" rows="2" required class="form-control" ar><%=currentUser.username%></textarea> -->
+            <!-- <div class="invalid-feedback">
+                Please Enter your username
+            </div>
+            <div class="valid-feedback">
+                Looks Good!
+            </div> -->
+        </div>
+        <br><br>
+        <div class="ipDiv">
+            <label for="org">Workplace</label>
+            <textarea name="org" id="org" cols="65" class="newInput"></textarea>
+        </div>
+        <br><br>
+        <div class="ipDiv">
+            <label for="headline">Topic</label>
+            <textarea name="headline" id="headline" cols="65" class="newInput form-control" required ></textarea>
+            <!-- <div class="invalid-feedback">
+                Please Enter a valid Headline
+            </div>
+            <div class="valid-feedback">
+                Looks Good!
+            </div>  -->
+        </div>
+        <br><br>
+        <div class="ipDiv">
+            <label for="text">Tag Line</label>
+            <textarea name="text" id="text" cols="65" class="newInput  form-control" required></textarea> 
+            <!-- <div class="invalid-feedback">
+                Please Enter a tagline
+            </div>
+            <div class="valid-feedback">
+                Looks Good!
+            </div> -->
+        </div>    
+        <br><br>
+        <div class="ipDiv">
+            <label for="img">Image URL</label>
+            <textarea name="img" id="img" cols="65" class="newInput"></textarea> 
+        </div>
+        <br><br>
+        <div class="ipDiv">
+            <label for="comment">Your thoughts</label>
+            <textarea name="comment" id="comment" cols="65" class="newInput  form-control" required ></textarea> 
+            <!-- <div class="invalid-feedback">
+                Enter blog text
+            </div>
+            <div class="valid-feedback">
+                Looks Good!
+            </div> -->
+        </div>
+        <br><br>
+        <button class="newBtn">Add Blog!</button>
+    </form>
+
+
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+    </script>
+    
+</body>
+</html>
+
+
+
+
+    
+
