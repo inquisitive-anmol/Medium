@@ -11,7 +11,6 @@ const methodOverride = require('method-override');
 const session = require('express-session')
 const passport = require('passport')
 const User = require('./Models/User');
-// const ejsMate = require('ejs-mate');
 app.use(session({
     secret: 'keyboard cat',
     resave: false,
